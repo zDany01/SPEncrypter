@@ -26,7 +26,7 @@ If for some reason, __the key is damaged or lost__, the program will __not__ be 
 ```sh
 pip install -r requirements.txt
 ```
-6. Generate the key by running the program for the first time
+3. Generate the key by running the program for the first time
 ```sh
 python SPEncrypter.py
 ```
