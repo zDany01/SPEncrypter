@@ -1,33 +1,75 @@
 # SPEncrypter
-This is a simple python text encrypter program that work using [Fernet](https://cryptography.io/en/latest/fernet/).
+This is a simple python text encrypter program that works using [Fernet](https://cryptography.io/en/latest/fernet/).
 
-The program will generate a key file on the first start that will be used for encrypting and decrypting text.  
-If for some reason, __the key is damaged or lost__, the program will not be able to decrypt anymore the text that has been encrypted before using that key.  
-⚠️ **So a backup for the "key" file present in the folder is raccomanded** ⚠️
+On the first run, the program will generate a key file that will be used for encrypting and decrypting text.  
+If for some reason, __the key is damaged or lost__, the program will __not__ be able to decrypt previously encrypted text which used that key.  
+⚠️ **So a backup for the encryption key is recommended** ⚠️
 
-## How to setup
-1. [Download](https://github.com/zDany01/SPEncrypter/releases) or clone the repository
-2. install the requirements:
-  >pip install -r requirements.txt
-3. Run the program for the first time to generate the key
-  >python3 SPEncrypter.py  
-  
- ![key](https://user-images.githubusercontent.com/85403430/141861344-eeb43892-7a25-4f2c-8b01-ff7dda44bd92.png)
+<details>
+  <summary>Rapid Links</summary>
+  <ul>
+    <li><a href="#setup">Setup</a></li>
+    <li><a href="#how-to-use-the-program">How to use the program</a>
+        <ul>
+        <li><a href="#encrypt-text">Encrypt Text</a></li>
+        <li><a href="#decrypt-text">Decrypt Text</a></li>
+        <li><a href="#generate-a-new-key">Generate a new Key</a></li>
+        </ul>
+    </li>
+  </ul>
+</details>
+
+
+## Setup
+1. [Download](https://github.com/zDany01/SPEncrypter/releases) the latest version or clone the repository
+2. Install the requirements
+```sh
+pip install -r requirements.txt
+```
+6. Generate the key by running the program for the first time
+```sh
+python SPEncrypter.py
+```
+ ![GenerateKey](https://github.com/zDany01/zDany01/blob/main/Assets/SPEncrypter/GenerateKey.png?raw=true)
+
 
 <br>
-     
- 
- ### How to use the program
- Run the program
- >python3 SPEncrypter.py
 
- Select 1 if you want to encrypt text  
-![crypt](https://user-images.githubusercontent.com/85403430/141862646-f5eb1675-95b1-481d-a3ae-b6b7b8b23dea.png)
- Select 2 if you want to decrypt text
-![decrypt](https://user-images.githubusercontent.com/85403430/141862370-e244581f-b205-4441-81a0-b0174ba71f78.png)
- Enter text to encrypt or decrypt
- ![result](https://user-images.githubusercontent.com/85403430/141862653-bd50be00-4527-4178-ba16-1116fc6779ca.png)
+## How to use the program
+First, start up the program
+```sh
+python SPEncrypter.py
+```
 
-#### Additional Info
-if you want to change the key, you can delete the current key and the program will generate a new one or you can change in the python file the NewKey variable
-![code](https://user-images.githubusercontent.com/85403430/141863053-1696f5e1-9732-4bb7-8e11-4bc5d26ab7cf.png)
+### Encrypt text
+>Select 1 to enter encryption mode 
+![EncryptMenu](https://github.com/zDany01/zDany01/blob/main/Assets/SPEncrypter/EncryptionMode.png?raw=true)
+
+Enter the text that you want to encrypt, for example, `Hello, World!`, and press enter
+
+![EncryptedText](https://github.com/zDany01/zDany01/blob/main/Assets/SPEncrypter/EncryptedText.png?raw=true)
+
+<br>
+
+### Decrypt text
+>Select 2 to enter decryption mode 
+![DecryptMenu](https://github.com/zDany01/zDany01/blob/main/Assets/SPEncrypter/DecryptionMode.png?raw=true)
+
+Enter encrypted text, in this case `gAAAAABioQmfkrueSLiHVLWuQeslv-K3ad5T4C2VFqgS_Yo9W-yjBcGzjx66Tp97nei1OJzjjhh3fvxgDVEw01YBsUgkMsIrWQ==`, and press enter
+![EncryptedText](https://github.com/zDany01/zDany01/blob/main/Assets/SPEncrypter/DecryptedText.png?raw=true)
+
+<br>
+
+
+
+### Generate a new Key
+
+**WARNING**
+If you replace your current key, all the text that you have previously encrypted using your old key will become undecryptable
+
+>Select 3 to generate a new Key
+![GeneratorMenu](https://github.com/zDany01/zDany01/blob/main/Assets/SPEncrypter/GeneratorMenu.png?raw=true)
+
+Type `Y` to confirm
+![ConfirmKey](https://github.com/zDany01/zDany01/blob/main/Assets/SPEncrypter/ConfirmKey.png?raw=true)
+![SuccessKey](https://github.com/zDany01/zDany01/blob/main/Assets/SPEncrypter/SuccessKey.png?raw=true)
